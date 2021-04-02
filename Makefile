@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/30 18:23:08 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/01 14:11:45 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/01 19:06:01 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME = libasm.a
 CFLAGS = -Wall -Wextra -Werror
 AFLAGS = -felf64
 SRCS =			ft_strlen.s \
-				ft_strcpy.s
+				ft_strcpy.s \
+				ft_strcmp.s
 OBJS = 			${SRCS:.s=.o}
 
 .s.o:

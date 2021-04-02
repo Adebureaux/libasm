@@ -1,31 +1,29 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strcpy.s                                        :+:      :+:    :+:    ;
+;    ft_strcmp.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2021/04/01 14:02:00 by adeburea          #+#    #+#              ;
-;    Updated: 2021/04/01 19:02:18 by adeburea         ###   ########.fr        ;
+;    Created: 2021/03/31 19:05:19 by adeburea          #+#    #+#              ;
+;    Updated: 2021/04/01 19:35:12 by adeburea         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global			ft_strcpy		;
+global			ft_strcmp		;
 
 section			.text			;
 
-ft_strcpy:
+ft_strcmp:
 xor		rcx, rcx				;	i = 0;
 
 loop:
-cmp		[rsi + rcx], byte 0		;	if (!src[i])
+cmp		[rsi + rcx], [rdi + rcx];	if (s2[i] != s1[i])
 jz		return					;		return();
-mov		dl, [rsi + rcx]			;	c = src[i];
-mov		[rdi + rcx], dl			;	dest[i] = c;
 inc		rcx						;	i++;
 jmp		loop					;	loop();
 
 return:
-mov		[rdi + rcx], byte 0		;	dest[i] = '\0';
-mov		rax, rdi				;	ret = dest;
+sub			dl, dh				;
+movzx		[rax], byte dl		;	ret = dest;
 ret								;	return (ret);

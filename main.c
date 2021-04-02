@@ -6,43 +6,47 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:44 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/01 14:44:45 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/01 19:16:57 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void		ft_check_strlen(void)
+void		check_strlen(void)
 {
 	printf("============================================\n");
 	printf("================ ft_strlen =================\n");
 	printf("============================================\n\n");
 	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("|%zd|\n", ft_strlen("Hello word"));
+	printf("|%zd|\n", ft_strlen("Lorem"));
 	printf("\033[36mresultat : libc\033[00m\n");
-	printf("|%zd|\n\n", strlen("Hello word"));
+	printf("|%zd|\n\n", strlen("Lorem"));
 	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("|%zd|\n", ft_strlen("a"));
+	printf("|%zd|\n", ft_strlen("ipsum"));
 	printf("\033[36mresultat : libc\033[00m\n");
-	printf("|%zd|\n\n", strlen("a"));
+	printf("|%zd|\n\n", strlen("ipsum"));
 	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("|%zd|\n", ft_strlen("123456"));
+	printf("|%zd|\n", ft_strlen("dolor sit amet, consectetur"));
 	printf("\033[36mresultat : libc\033[00m\n");
-	printf("|%zd|\n\n", strlen("123456"));
+	printf("|%zd|\n\n", strlen("dolor sit amet, consectetur"));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("|%zd|\n", ft_strlen("."));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("|%zd|\n\n", strlen("."));
 	printf("\033[36mresultat : libasm\033[00m\n");
 	printf("|%zd|\n", ft_strlen(""));
 	printf("\033[36mresultat : libc\033[00m\n");
 	printf("|%zd|\n\n", strlen(""));
 }
 
-void		ft_check_strcpy(void)
+void		check_strcpy(void)
 {
-	char	str1[] = "Bonjour";
-	char	str2[] = "Hello";
-	char	str3[] = "libc most power full";
-	char	str4[] = "libasm is for the ";
-	char	str5[] = "petit";
-	char	str6[] = "grand";
+	char	str1[] = "Lorem";
+	char	str2[] = "ipsum";
+	char	str3[] = "dolor sit amet, consectetur";
+	char	str4[] = "adipiscing elit.";
+	char	str5[] = "Sed non";
+	char	str6[] = "risus.";
 	char	str7[] = "";
 	printf("============================================\n");
 	printf("================ ft_strcpy =================\n");
@@ -69,7 +73,28 @@ void		ft_check_strcpy(void)
 	printf("return : |%s|\n\n", strcpy(str7, str6));
 }
 
-// void		ft_check_write(void)
+void		check_strcmp(void)
+{
+	char	str1[] = "";
+	char	str2[] = "Lorem ipsum dolor";
+	printf("============================================\n");
+	printf("================ ft_strcmp =================\n");
+	printf("============================================\n\n");
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n", ft_strcmp("Hello", "Hello"));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp("Hello", "Hello"));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n", ft_strcmp("abcd", "abce"));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp("abcd", "abce"));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n", ft_strcmp(str2, str1));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp(str2, str1));
+}
+
+// void		check_write(void)
 // {
 // 	printf("============================================\n");
 // 	printf("================ Ft_write ==================\n");
@@ -79,16 +104,16 @@ void		ft_check_strcpy(void)
 // 	printf("\033[36mresultat : libc\033[00m\n");
 // 	printf("\nreturn : [%zd]\n\n", write(1, "Hello World !", 13));
 // 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("\nreturn : [%zd]\n", ft_write(-7, "libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test", 271));
+// 	printf("\nreturn : [%zd]\n", ft_write(-7, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.", 500));
 // 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("\nreturn : [%zd]\n\n", write(-7, "libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test", 271));
+// 	printf("\nreturn : [%zd]\n\n", write(-7, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.", 500));
 // 	printf("\033[36mresultat : libasm\033[00m\n");
 // 	printf("\nreturn : [%zd]\n", ft_write(1, "", 1));
 // 	printf("\033[36mresultat : libc\033[00m\n");
 // 	printf("\nreturn : [%zd]\n\n", write(1, "", 1));
 // }
 
-// void		ft_check_read(void)
+// void		check_read(void)
 // {
 // 	ssize_t		ret_read;
 // 	int			fd;
@@ -121,28 +146,7 @@ void		ft_check_strcpy(void)
 // 	close(fd);
 // }
 
-// void		ft_check_strcmp(void)
-// {
-// 	char	strcmp1[] = "";
-// 	char	strcmp2[] = "Hello World !";
-// 	printf("============================================\n");
-// 	printf("================ Ft_strcmp =================\n");
-// 	printf("============================================\n\n");
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("return : [%d]\n", ft_strcmp("Hello", "Hello"));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("return : [%d]\n\n", strcmp("Hello", "Hello"));
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("return : [%d]\n", ft_strcmp("abcd", "abce"));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("return : [%d]\n\n", strcmp("abcd", "abce"));
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("return : [%d]\n", ft_strcmp(strcmp2, strcmp1));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("return : [%d]\n\n", strcmp(strcmp2, strcmp1));
-// }
-
-// void		ft_check_strdup(void)
+// void		check_strdup(void)
 // {
 // 	char	dup[] = "New Malloc";
 // 	char	dup1[] = "little";
@@ -166,11 +170,11 @@ void		ft_check_strcpy(void)
 
 int			main(void)
 {
-	ft_check_strlen();
-	ft_check_strcpy();
-	//ft_check_write();
-	//ft_check_read();
-	//ft_check_strcmp();
-	//ft_check_strdup();
+	check_strlen();
+	check_strcpy();
+	check_strcmp();
+	//check_write();
+	//check_read();
+	//check_strdup();
 	return (0);
 }

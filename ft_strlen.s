@@ -6,26 +6,23 @@
 ;    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2021/03/31 14:07:24 by adeburea          #+#    #+#              ;
-;    Updated: 2021/04/01 15:34:25 by adeburea         ###   ########.fr        ;
+;    Updated: 2021/04/01 19:03:00 by adeburea         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global			ft_strlen
+global			ft_strlen		;
 
-section			.text
+section			.text			;
 
 ft_strlen:
-push	rcx				; save and clear out counter
-xor		rcx, rcx
+xor		rcx, rcx				;	i = 0;
 
-next_char:
-cmp		[rdi], byte 0	; null byte yet?
-jz		return			; yes, get out
-inc		rcx				; char is ok, count it
-inc		rdi				; move to next char
-jmp		next_char		; process again
+loop:
+cmp		[rdi + rcx], byte 0		;	if (!s[i])
+jz		return					;		return();
+inc		rcx						;	i++;
+jmp		loop					;	loop();
 
 return:
-mov		rax, rcx		; rcx = the length (put in rax)
-pop		rcx				; restore rcx
-ret
+mov		rax, rcx				;	ret = i;
+ret								;	return(ret);
