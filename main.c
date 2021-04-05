@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:44 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/01 19:16:57 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/05 16:10:24 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void		check_strcpy(void)
 
 void		check_strcmp(void)
 {
-	char	str1[] = "";
+	char	str1[] = "A";
 	char	str2[] = "Lorem ipsum dolor";
 	printf("============================================\n");
 	printf("================ ft_strcmp =================\n");
@@ -85,33 +85,41 @@ void		check_strcmp(void)
 	printf("\033[36mresultat : libc\033[00m\n");
 	printf("return : [%d]\n\n", strcmp("Hello", "Hello"));
 	printf("\033[36mresultat : libasm\033[00m\n");
-	printf("return : [%d]\n", ft_strcmp("abcd", "abce"));
+	printf("return : [%d]\n", ft_strcmp("abcd", "abcde"));
 	printf("\033[36mresultat : libc\033[00m\n");
-	printf("return : [%d]\n\n", strcmp("abcd", "abce"));
+	printf("return : [%d]\n\n", strcmp("abcd", "abcde"));
 	printf("\033[36mresultat : libasm\033[00m\n");
 	printf("return : [%d]\n", ft_strcmp(str2, str1));
 	printf("\033[36mresultat : libc\033[00m\n");
 	printf("return : [%d]\n\n", strcmp(str2, str1));
 }
 
-// void		check_write(void)
-// {
-// 	printf("============================================\n");
-// 	printf("================ Ft_write ==================\n");
-// 	printf("============================================\n\n");
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("\nreturn : [%zd]\n", ft_write(1, "Hello World !", 13));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("\nreturn : [%zd]\n\n", write(1, "Hello World !", 13));
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("\nreturn : [%zd]\n", ft_write(-7, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.", 500));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("\nreturn : [%zd]\n\n", write(-7, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim.", 500));
-// 	printf("\033[36mresultat : libasm\033[00m\n");
-// 	printf("\nreturn : [%zd]\n", ft_write(1, "", 1));
-// 	printf("\033[36mresultat : libc\033[00m\n");
-// 	printf("\nreturn : [%zd]\n\n", write(1, "", 1));
-// }
+void		check_write(void)
+{
+	printf("============================================\n");
+	printf("================ ft_write ==================\n");
+	printf("============================================\n\n");
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("\nreturn : [%zd]\n", ft_write(1, "Hello World !", 13));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("\nreturn : [%zd]\n\n", write(1, "Hello World !", 13));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("\nreturn : [%zd]\n", ft_write(1, "Test", 1));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("\nreturn : [%zd]\n\n", write(1, "Test", 1));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%zd]\n", ft_write(-7, "Lorem ipsum dolor sit amet.", 500));
+	perror("Error");
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%zd]\n", write(-7, "Lorem ipsum dolor sit amet.", 500));
+	perror("Error");
+	printf("\n\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%zd]\n", ft_write(1, "", -1));
+	perror("Error");
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%zd]\n", write(1, "", -1));
+	perror("Error");
+}
 
 // void		check_read(void)
 // {
@@ -173,7 +181,7 @@ int			main(void)
 	check_strlen();
 	check_strcpy();
 	check_strcmp();
-	//check_write();
+	check_write();
 	//check_read();
 	//check_strdup();
 	return (0);

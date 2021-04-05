@@ -6,7 +6,7 @@
 ;    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2021/03/31 14:07:24 by adeburea          #+#    #+#              ;
-;    Updated: 2021/04/01 19:03:00 by adeburea         ###   ########.fr        ;
+;    Updated: 2021/04/02 16:49:48 by adeburea         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -25,4 +25,4 @@ jmp		loop					;	loop();
 
 return:
 mov		rax, rcx				;	ret = i;
-ret								;	return(ret);
+ret								;	return (ret);
