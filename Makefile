@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/30 18:23:08 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/05 15:10:20 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/06 01:53:36 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ AFLAGS = -felf64
 SRCS =			ft_strlen.s \
 				ft_strcpy.s \
 				ft_strcmp.s \
-				ft_write.s
+				ft_write.s \
+				ft_read.s
 OBJS = 			${SRCS:.s=.o}
 
 .s.o:
