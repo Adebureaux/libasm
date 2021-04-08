@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:44 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/08 15:01:21 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/08 15:09:09 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,11 +209,12 @@ void		check_read(void)
 
 void		check_strdup(void)
 {
-	char	dup[] = "New Malloc";
+	char	dup[] = "Lorem Ipsum";
 	char	dup1[] = "";
-	char	dup2[] = "Very big malloc, libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test !";
+	char	dup2[] = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
 	printf("============================================\n");
-	printf("================ Ft_strdup =================\n");
+	printf("================ ft_strdup =================\n");
 	printf("============================================\n\n");
 	printf("\033[36mresult : libasm\033[00m\n");
 	printf("return : |%s|\n", ft_strdup(dup));
