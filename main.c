@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 14:08:44 by adeburea          #+#    #+#             */
-/*   Updated: 2021/04/06 03:42:26 by adeburea         ###   ########.fr       */
+/*   Updated: 2021/04/08 15:01:21 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void		check_strcpy(void)
 	char	str5[] = "Sed non";
 	char	str6[] = "risus.";
 	char	str7[] = "";
+
 	printf("============================================\n");
 	printf("================ ft_strcpy =================\n");
 	printf("============================================\n\n");
@@ -77,6 +78,7 @@ void		check_strcmp(void)
 {
 	char	str1[] = "A";
 	char	str2[] = "Lorem ipsum dolor";
+
 	printf("============================================\n");
 	printf("================ ft_strcmp =================\n");
 	printf("============================================\n\n");
@@ -205,27 +207,27 @@ void		check_read(void)
 	close(fd);
 }
 
-// void		check_strdup(void)
-// {
-// 	char	dup[] = "New Malloc";
-// 	char	dup1[] = "little";
-// 	char	dup2[] = "Very big malloc, libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test !";
-// 	printf("============================================\n");
-// 	printf("================ Ft_strdup =================\n");
-// 	printf("============================================\n\n");
-// 	printf("\033[36mresult : libasm\033[00m\n");
-// 	printf("return : |%s|\n", ft_strdup(dup));
-// 	printf("\033[36mresult : libc\033[00m\n");
-// 	printf("return : |%s|\n\n", strdup(dup));
-// 	printf("\033[36mresult : libasm\033[00m\n");
-// 	printf("return : |%s|\n", ft_strdup(dup1));
-// 	printf("\033[36mresult : libc\033[00m\n");
-// 	printf("return : |%s|\n\n", strdup(dup1));
-// 	printf("\033[36mresult : libasm\033[00m\n");
-// 	printf("return : |%s|\n", ft_strdup(dup2));
-// 	printf("\033[36mresult : libc\033[00m\n");
-// 	printf("return : |%s|\n\n", strdup(dup2));
-// }
+void		check_strdup(void)
+{
+	char	dup[] = "New Malloc";
+	char	dup1[] = "";
+	char	dup2[] = "Very big malloc, libasm is a project that was very interesting to me at the time and I am doing a test of my function with a rather large sentence without any goal, but here I fill as I can thank you for ignoring this sentence, there even punctuation or spelling, this is a crash test !";
+	printf("============================================\n");
+	printf("================ Ft_strdup =================\n");
+	printf("============================================\n\n");
+	printf("\033[36mresult : libasm\033[00m\n");
+	printf("return : |%s|\n", ft_strdup(dup));
+	printf("\033[36mresult : libc\033[00m\n");
+	printf("return : |%s|\n\n", strdup(dup));
+	printf("\033[36mresult : libasm\033[00m\n");
+	printf("return : |%s|\n", ft_strdup(dup1));
+	printf("\033[36mresult : libc\033[00m\n");
+	printf("return : |%s|\n\n", strdup(dup1));
+	printf("\033[36mresult : libasm\033[00m\n");
+	printf("return : |%s|\n", ft_strdup(dup2));
+	printf("\033[36mresult : libc\033[00m\n");
+	printf("return : |%s|\n\n", strdup(dup2));
+}
 
 int			main(void)
 {
@@ -234,6 +236,6 @@ int			main(void)
 	check_strcmp();
 	check_write();
 	check_read();
-	//check_strdup();
+	check_strdup();
 	return (0);
 }

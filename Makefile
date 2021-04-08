@@ -6,7 +6,7 @@
 #    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/30 18:23:08 by adeburea          #+#    #+#              #
-#    Updated: 2021/04/06 01:53:36 by adeburea         ###   ########.fr        #
+#    Updated: 2021/04/08 14:15:04 by adeburea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS =			ft_strlen.s \
 				ft_strcpy.s \
 				ft_strcmp.s \
 				ft_write.s \
-				ft_read.s
+				ft_read.s \
+				ft_strdup.s
 OBJS = 			${SRCS:.s=.o}
 
 .s.o:
